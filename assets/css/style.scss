@@ -1,17 +1,39 @@
+* {
+  overflow: hidden;
+}
+
 body {
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  font-family: "Source Code Pro", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
 }
 
 .icon-profile {
   display: block;
   border-radius: 50%;
   margin: 80px auto;
-  border: 8px solid rgba(255, 255, 255, 0.25);
-  opacity: 0.93;
+  border: 8px solid rgba(0, 0, 0, 0.15);
+  opacity: 0.98;
+}
+
+.profile {
+  width: 50%;
+  height: 8rem;
+  padding: 15px;
+  margin: auto;
+  background: rgba(217, 217, 217, 0.65);
+}
+
+.name {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#description {
+  font-size: 2rem;
+  text-align: center;
 }
 
 #particles {
-  background: #6f87aa;
+  background: #d6d6d6;
   width: 100%;
   height: 100%;
   position: fixed;

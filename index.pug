@@ -3,12 +3,20 @@ html(lang="ja")
     head
         meta(charset="utf-8")
         link(rel="stylesheet" type="text/css" href="assets/css/style.css")
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500")
         link(rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon_32.png")
-        title BlackBracken
+        title bracken.black
+        script(src="https://unpkg.com/ityped@1.0.3")
+        script(src="assets/js/particles.min.js")
     body
         img.icon-profile(src="assets/images/profile_icon.png")
 
+        .profile
+            .name BlackBracken
+
+            #description
+            script(src="assets/js/description.js")
+
         //- particles
         #particles
-        script(src="assets/js/particles.min.js")
         script(type="text/javascript") particlesJS.load("particles", "./assets/particles.json");
