@@ -2,6 +2,14 @@ body {
   font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
 }
 
+.icon-profile {
+  display: block;
+  border-radius: 50%;
+  margin: 80px auto;
+  border: 8px solid rgba(255, 255, 255, 0.25);
+  opacity: 0.93;
+}
+
 #particles {
   background: #444444;
   width: 100%;
