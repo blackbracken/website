@@ -1,5 +1,5 @@
 # bracken.black
 
 ## dependencies
-* Slim
-* ruby-sass
+* Pug/Jade
+* Sass
