@@ -6,16 +6,16 @@ let mail_modal = new tingle.modal();
 mail_modal.setContent('<h2>me(at_mark)bracken.black</h2>'.replace("(at_mark)", "@"));
 
 document.getElementById("github-button").onclick = () => {
-    location.href = LINK_GITHUB
+    window.open(LINK_GITHUB);
 };
 
 document.getElementById("twitter-button").onclick = () => {
-    location.href = LINK_TWITTER
+    window.open(LINK_TWITTER);
 };
 
 document.getElementById("blog-button").onclick = () => {
-    location.href = LINK_BLOG
-}
+    window.open(LINK_BLOG);
+};
 
 document.getElementById("mail-button").onclick = () => {
     mail_modal.open()
