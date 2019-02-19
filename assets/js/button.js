@@ -2,6 +2,7 @@ const MAIL = 'me(at_mark)bracken.black'.replace('(at_mark)', '@');
 const LINK_GITHUB = 'https://github.com/blackbracken/';
 const LINK_TWITTER = 'https://twitter.com/black_bracken/';
 const LINK_BLOG = 'https://blackbracken.hatenablog.com/';
+const LINK_AMAZON = 'https://bit.ly/2NdrAbi';
 
 let mail_modal = new tingle.modal({
     footer: true
@@ -21,6 +22,10 @@ document.getElementById('twitter-button').onclick = () => {
 
 document.getElementById('blog-button').onclick = () => {
     window.open(LINK_BLOG);
+};
+
+document.getElementById('amazon-button').onclick = () => {
+    window.open(LINK_AMAZON);
 };
 
 document.getElementById('mail-button').onclick = () => {
