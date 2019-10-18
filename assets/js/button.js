@@ -3,6 +3,7 @@ const LINK_GITHUB = 'https://github.com/blackbracken/';
 const LINK_TWITTER = 'https://twitter.com/black_bracken/';
 const LINK_BLOG = 'https://blackbracken.hatenablog.com/';
 const LINK_AMAZON = 'https://bit.ly/2NdrAbi';
+const LINK_KEYBASE = 'https://keybase.io/blackbracken';
 
 let mail_modal = new tingle.modal({
     footer: true
@@ -26,6 +27,10 @@ document.getElementById('blog-button').onclick = () => {
 
 document.getElementById('amazon-button').onclick = () => {
     window.open(LINK_AMAZON);
+};
+
+document.getElementById('keybase-button').onclick = () => {
+    window.open(LINK_KEYBASE);
 };
 
 document.getElementById('mail-button').onclick = () => {
