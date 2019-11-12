@@ -33,5 +33,6 @@ for file_path in `\find ./$1/ -maxdepth 1 -type f -name "*.java" | grep -v "test
   
   cd $1/
   sh $test_shell_name
+  javac ${file_name}.java
   cd ../
 done
