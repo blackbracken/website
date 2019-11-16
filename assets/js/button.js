@@ -1,9 +1,11 @@
 const MAIL = 'me(at_mark)bracken.black'.replace('(at_mark)', '@');
 const LINK_GITHUB = 'https://github.com/blackbracken/';
+const LINK_SOURCERER = 'https://sourcerer.io/blackbracken/';
 const LINK_TWITTER = 'https://twitter.com/black_bracken/';
 const LINK_BLOG = 'https://blackbracken.hatenablog.com/';
 const LINK_AMAZON = 'https://bit.ly/2NdrAbi';
-const LINK_KEYBASE = 'https://keybase.io/blackbracken';
+const LINK_KEYBASE = 'https://keybase.io/blackbracken/';
+const LINK_INSTAGRAM = 'https://instagram.com/blackbracken/';
 
 let mail_modal = new tingle.modal({
     footer: true
@@ -15,6 +17,10 @@ mail_modal.addFooterBtn('Send me a mail', 'tingle-btn tingle-btn--primary tingle
 
 document.getElementById('github-button').onclick = () => {
     window.open(LINK_GITHUB);
+};
+
+document.getElementById('sourcerer-button').onclick = () => {
+    window.open(LINK_SOURCERER);
 };
 
 document.getElementById('twitter-button').onclick = () => {
@@ -31,6 +37,10 @@ document.getElementById('amazon-button').onclick = () => {
 
 document.getElementById('keybase-button').onclick = () => {
     window.open(LINK_KEYBASE);
+};
+
+document.getElementById('instagram-button').onclick = () => {
+    window.open(LINK_INSTAGRAM);
 };
 
 document.getElementById('mail-button').onclick = () => {
