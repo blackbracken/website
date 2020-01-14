@@ -7,7 +7,7 @@ $mobile: 640px;
 }
 
 * {
-  font-family: "Noto Sans JP thin", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
+  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, Meiryo, sans-serif;
   margin: 0;
 }
 
@@ -21,7 +21,8 @@ h2 {
 
 .icon-profile {
   display: block;
-  border-radius: 50%;
+  width: 360px;
+  height: 360px;
   margin: 80px auto;
   border: 8px solid rgba(0, 0, 0, 0.15);
   opacity: 0.98;
