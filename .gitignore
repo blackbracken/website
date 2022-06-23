@@ -1,5 +1,2 @@
-.idea/
-**/*.map
-blackbracken.github.io.iml
-
-node_modules/
+node_modules
+dist
