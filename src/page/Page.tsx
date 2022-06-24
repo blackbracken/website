@@ -26,7 +26,7 @@ export const Page: Component = () => {
     },
     {
       companyName: "CyberAgent, Inc.",
-      details: ["2021/08 ~ 2021/12", "Internship (Android)"],
+      details: ["2021/08 ~ 2021/12", "Part-time employee (Android)"],
     },
     {
       companyName: "Fenrir, Inc.",
@@ -63,8 +63,8 @@ export const Page: Component = () => {
       <Name realName="Yoshikane Fumitaka" />
       <SeeAlso dests={destinations} />
       <Interests interests={interests} />
-      <Career careerHistory={careerHistory} />
       <Experiences experienceList={experienceList} />
+      <Career careerHistory={careerHistory} />
     </div>
   );
 };
