@@ -22,6 +22,11 @@ globalStyle("*", {
   margin: 0,
 });
 
+globalStyle("li", {
+  marginTop: "0.5em",
+  marginBottom: "0.5em",
+});
+
 globalStyle("h1, h2, h3, a, p, li", {
   color: vars.color.text,
 });
