@@ -7,11 +7,11 @@ type Interest = { overview: string; details?: string[] };
 
 type InterestsProps = { interests: Interest[] };
 
-const Interests: Component<InterestsProps> = ({ interests }) => (
+const Interests: Component<InterestsProps> = (props) => (
   <section>
     <SectionTitleText text="INTERESTS" />
     <ul>
-      <For each={interests}>
+      <For each={props.interests}>
         {(interest: Interest, _) =>
           match<Interest, JSXElement>(interest)
             .with(

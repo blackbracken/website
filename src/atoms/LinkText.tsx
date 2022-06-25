@@ -5,10 +5,10 @@ type LinkTextProps = {
   text: string;
   url: string;
 };
-const LinkText: Component<LinkTextProps> = ({ text, url }) => (
+const LinkText: Component<LinkTextProps> = (props) => (
   <li>
-    <a class={textClass} href={url}>
-      {text}
+    <a class={textClass} href={props.url}>
+      {props.text}
     </a>
   </li>
 );

@@ -11,11 +11,11 @@ type Destination = {
 
 type SeeAlsoProps = { dests: Destination[] };
 
-const SeeAlso: Component<SeeAlsoProps> = ({ dests }) => (
+const SeeAlso: Component<SeeAlsoProps> = (props) => (
   <section>
     <SectionTitleText text="SEE ALSO" />
     <ul>
-      <For each={dests}>
+      <For each={props.dests}>
         {(dest: Destination, _) =>
           match<Destination, JSXElement>(dest)
             .with({ text: P.string, url: P.string }, ({ text, url }) => (

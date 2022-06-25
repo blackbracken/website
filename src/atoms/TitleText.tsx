@@ -3,8 +3,8 @@ import { topTitleClass } from "../app.css";
 
 type TitleTextProps = { text: string };
 
-const TitleText: Component<TitleTextProps> = ({ text }) => (
-  <h1 class={topTitleClass}>{text}</h1>
+const TitleText: Component<TitleTextProps> = (props) => (
+  <h1 class={topTitleClass}>{props.text}</h1>
 );
 
 export default TitleText;

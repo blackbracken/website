@@ -4,10 +4,10 @@ import SectionTitleText from "../atoms/SectionTitleText";
 
 type NameProps = { realName: string };
 
-const Name: Component<NameProps> = ({ realName }) => (
+const Name: Component<NameProps> = (props) => (
   <section>
     <SectionTitleText text="NAME" />
-    <PlainText text={realName} />
+    <PlainText text={props.realName} />
   </section>
 );
 

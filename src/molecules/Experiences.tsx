@@ -5,11 +5,11 @@ import SectionTitleText from "../atoms/SectionTitleText";
 type Experience = { categoryName: string; items: string[] };
 type ExperiencesProps = { experienceList: Experience[] };
 
-const Experiences: Component<ExperiencesProps> = ({ experienceList }) => (
+const Experiences: Component<ExperiencesProps> = (props) => (
   <section>
     <SectionTitleText text="EXPERIENCES" />
     <ul>
-      <For each={experienceList}>
+      <For each={props.experienceList}>
         {(experience: Experience, _) => (
           <li>
             <PlainText text={experience.categoryName} />

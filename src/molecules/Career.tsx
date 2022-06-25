@@ -6,11 +6,11 @@ import SectionTitleText from "../atoms/SectionTitleText";
 type SingleCareer = { companyName: string; details: string[] };
 type CareerProps = { careerHistory: SingleCareer[] };
 
-const Career: Component<CareerProps> = ({ careerHistory }) => (
+const Career: Component<CareerProps> = (props) => (
   <section>
     <SectionTitleText text="CAREER" />
     <ul>
-      <For each={careerHistory}>
+      <For each={props.careerHistory}>
         {(career: SingleCareer, _) => (
           <li>
             <PlainText text={career.companyName} />
