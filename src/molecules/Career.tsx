@@ -1,22 +1,24 @@
 import { Component, For } from "solid-js";
 import { sectionTitleClass, textClass } from "../app.css";
+import PlainText from "../atoms/PlainText";
+import SectionTitleText from "../atoms/SectionTitleText";
 
 type SingleCareer = { companyName: string; details: string[] };
 type CareerProps = { careerHistory: SingleCareer[] };
 
 const Career: Component<CareerProps> = ({ careerHistory }) => (
   <section>
-    <h2 class={sectionTitleClass}>CAREER</h2>
+    <SectionTitleText text="CAREER" />
     <ul>
       <For each={careerHistory}>
-        {(career: SingleCareer, _: any) => (
+        {(career: SingleCareer, _) => (
           <li>
-            <p class={textClass}>{career.companyName}</p>
+            <PlainText text={career.companyName} />
             <ul>
               <For each={career.details}>
-                {(detail: string, _: any) => (
+                {(detail: string, _) => (
                   <li>
-                    <p class={textClass}>{detail}</p>
+                    <PlainText text={detail} />
                   </li>
                 )}
               </For>

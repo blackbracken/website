@@ -1,10 +1,10 @@
 import { Component } from "solid-js";
-import Name from "../components/Name";
-import SeeAlso from "../components/SeeAlso";
-import Title from "../components/Title";
-import Interests from "../components/Interests";
-import Career from "../components/Career";
-import Experiences from "../components/Experiences";
+import Name from "../molecules/Name";
+import SeeAlso from "../molecules/SeeAlso";
+import Title from "../molecules/Title";
+import Interests from "../molecules/Interests";
+import Career from "../molecules/Career";
+import Experiences from "../molecules/Experiences";
 
 export const Page: Component = () => {
   const destinations = [

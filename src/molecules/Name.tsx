@@ -1,12 +1,13 @@
 import { Component } from "solid-js";
-import { sectionTitleClass, textClass } from "../app.css";
+import PlainText from "../atoms/PlainText";
+import SectionTitleText from "../atoms/SectionTitleText";
 
 type NameProps = { realName: string };
 
 const Name: Component<NameProps> = ({ realName }) => (
   <section>
-    <h2 class={sectionTitleClass}>NAME</h2>
-    <p class={textClass}>{realName}</p>
+    <SectionTitleText text="NAME" />
+    <PlainText text={realName} />
   </section>
 );
 

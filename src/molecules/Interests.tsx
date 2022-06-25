@@ -1,6 +1,7 @@
 import { Component, For, JSXElement } from "solid-js";
 import { match, P } from "ts-pattern";
-import { sectionTitleClass, textClass } from "../app.css";
+import PlainText from "../atoms/PlainText";
+import SectionTitleText from "../atoms/SectionTitleText";
 
 type Interest = { overview: string; details?: string[] };
 
@@ -8,21 +9,21 @@ type InterestsProps = { interests: Interest[] };
 
 const Interests: Component<InterestsProps> = ({ interests }) => (
   <section>
-    <h2 class={sectionTitleClass}>INTERESTS</h2>
+    <SectionTitleText text="INTERESTS" />
     <ul>
       <For each={interests}>
-        {(interest: Interest, _: any) =>
+        {(interest: Interest, _) =>
           match<Interest, JSXElement>(interest)
             .with(
               { overview: P.string, details: P.array(P.string) },
               ({ overview, details }) => (
                 <li>
-                  <p class={textClass}>{overview}</p>
+                  <PlainText text={overview} />
                   <ul>
                     <For each={details}>
                       {(detail) => (
                         <li>
-                          <p class={textClass}>{detail}</p>
+                          <PlainText text={detail} />
                         </li>
                       )}
                     </For>
@@ -32,7 +33,7 @@ const Interests: Component<InterestsProps> = ({ interests }) => (
             )
             .with({ overview: P.string }, ({ overview }) => (
               <li>
-                <p class={textClass}>{overview}</p>
+                <PlainText text={overview} />
               </li>
             ))
             .exhaustive()

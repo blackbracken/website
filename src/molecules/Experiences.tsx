@@ -1,22 +1,23 @@
 import { Component, For } from "solid-js";
-import { sectionTitleClass, textClass } from "../app.css";
+import PlainText from "../atoms/PlainText";
+import SectionTitleText from "../atoms/SectionTitleText";
 
 type Experience = { categoryName: string; items: string[] };
 type ExperiencesProps = { experienceList: Experience[] };
 
 const Experiences: Component<ExperiencesProps> = ({ experienceList }) => (
   <section>
-    <h2 class={sectionTitleClass}>EXPERIENCES</h2>
+    <SectionTitleText text="EXPERIENCES" />
     <ul>
       <For each={experienceList}>
-        {(experience: Experience, _: any) => (
+        {(experience: Experience, _) => (
           <li>
-            <p class={textClass}>{experience.categoryName}</p>
+            <PlainText text={experience.categoryName} />
             <ul>
               <For each={experience.items}>
-                {(item: string, _: any) => (
+                {(item: string, _) => (
                   <li>
-                    <p class={textClass}>{item}</p>
+                    <PlainText text={item} />
                   </li>
                 )}
               </For>
@@ -25,7 +26,7 @@ const Experiences: Component<ExperiencesProps> = ({ experienceList }) => (
         )}
       </For>
     </ul>
-    <p class={textClass}>[*]: more experienced</p>
+    <PlainText text="[*]: more experienced" />
   </section>
 );
 

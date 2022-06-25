@@ -1,8 +1,8 @@
 import { Component, For, JSXElement } from "solid-js";
 import { match, P } from "ts-pattern";
-import { sectionTitleClass } from "../app.css";
-import LinkText from "./LinkText";
-import PlainText from "./PlainText";
+import LinkText from "../atoms/LinkText";
+import PlainText from "../atoms/PlainText";
+import SectionTitleText from "../atoms/SectionTitleText";
 
 type Destination = {
   text: string;
@@ -13,10 +13,10 @@ type SeeAlsoProps = { dests: Destination[] };
 
 const SeeAlso: Component<SeeAlsoProps> = ({ dests }) => (
   <section>
-    <h2 class={sectionTitleClass}>SEE ALSO</h2>
+    <SectionTitleText text="SEE ALSO" />
     <ul>
       <For each={dests}>
-        {(dest: Destination, _: any) =>
+        {(dest: Destination, _) =>
           match<Destination, JSXElement>(dest)
             .with({ text: P.string, url: P.string }, ({ text, url }) => (
               <li>
