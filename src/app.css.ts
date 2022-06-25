@@ -1,8 +1,29 @@
-import { globalStyle, style } from "@vanilla-extract/css";
+import { createTheme, globalStyle, style } from "@vanilla-extract/css";
+
+export const LightThemeColor = "#F2F2F2";
+export const DarkThemeColor = "#1A1A1A";
+
+export const [lightTheme, vars] = createTheme({
+  color: {
+    background: LightThemeColor,
+    text: DarkThemeColor,
+  },
+});
+
+export const darkTheme = createTheme(vars, {
+  color: {
+    background: DarkThemeColor,
+    text: LightThemeColor,
+  },
+});
 
 globalStyle("*", {
   fontFamily: "Raleway, sans-serif",
   margin: 0,
+});
+
+globalStyle("h1, h2, h3, a, p, li", {
+  color: vars.color.text,
 });
 
 globalStyle(".page", {

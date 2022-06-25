@@ -1,7 +1,7 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
+import { App } from "./App";
 
 import "./app.css";
-import { Page } from "./page/Page";
 
-render(() => <Page />, document.getElementById("root") as HTMLElement);
+render(() => <App />, document.getElementById("root") as HTMLElement);
