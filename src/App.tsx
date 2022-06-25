@@ -8,11 +8,14 @@ import {
 import { Page } from "./page/Page";
 
 export const App: Component = () => {
-  const [onDarkTheme, setDarkTheme] = createSignal(true);
+  const [onDarkTheme, setDarkTheme] = createSignal(
+    shouldUseDarkThemeAsDefault()
+  );
 
   createEffect(() => {
-    document.getElementsByTagName("body")[0].style.backgroundColor =
-      onDarkTheme() ? DarkThemeColor : LightThemeColor;
+    rewriteBackgroundColorOfBodyViaDom(
+      onDarkTheme() ? DarkThemeColor : LightThemeColor
+    );
   });
 
   return (
@@ -20,4 +23,11 @@ export const App: Component = () => {
       <Page />
     </div>
   );
+};
+
+const shouldUseDarkThemeAsDefault = (): boolean =>
+  window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+const rewriteBackgroundColorOfBodyViaDom = (color: string) => {
+  document.getElementsByTagName("body")[0].style.backgroundColor = color;
 };
