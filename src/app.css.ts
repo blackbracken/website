@@ -103,15 +103,23 @@ export const sectionTitleClass = style({
 
 export const toggleThemeButtonClass = style({
   position: "fixed",
-  right: "5vh",
-  bottom: "5vh",
+  right: "5%",
+  bottom: "5%",
 
-  width: "4vw",
-  height: "4vw",
+  width: "15vw",
+  height: "15vw",
   borderRadius: "8%",
 
   backgroundColor: vars.toggleButton.background,
   outline: vars.toggleButton.outline,
+
+  "@media": {
+    "screen and (min-width: 800px)": {
+      width: "5vw",
+      height: "5vw",
+      top: "5%",
+    },
+  },
 });
 
 export const themeIconClass = style({
