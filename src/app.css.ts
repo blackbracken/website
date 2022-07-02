@@ -8,6 +8,10 @@ export const [lightTheme, vars] = createTheme({
     background: LightThemeColor,
     text: DarkThemeColor,
   },
+  toggleButton: {
+    background: DarkThemeColor,
+    outline: `${LightThemeColor} solid`,
+  },
 });
 
 export const darkTheme = createTheme(vars, {
@@ -15,11 +19,19 @@ export const darkTheme = createTheme(vars, {
     background: DarkThemeColor,
     text: LightThemeColor,
   },
+  toggleButton: {
+    background: LightThemeColor,
+    outline: `${DarkThemeColor} solid`,
+  },
 });
 
 globalStyle("*", {
   fontFamily: "Raleway, sans-serif",
   margin: 0,
+});
+
+globalStyle("body", {
+  overscrollBehaviorY: "none",
 });
 
 globalStyle("li", {
@@ -87,4 +99,36 @@ export const sectionTitleClass = style({
       fontSize: "2vw",
     },
   },
+});
+
+export const toggleThemeButtonClass = style({
+  position: "fixed",
+  right: "5%",
+  bottom: "5%",
+
+  width: "15vw",
+  height: "15vw",
+  borderRadius: "8%",
+
+  backgroundColor: vars.toggleButton.background,
+  outline: vars.toggleButton.outline,
+
+  "@media": {
+    "screen and (min-width: 800px)": {
+      width: "5vw",
+      height: "5vw",
+      top: "5%",
+    },
+  },
+});
+
+export const themeIconClass = style({
+  position: "absolute",
+  transform: "translate(-50%, -50%)",
+  top: "50%",
+  left: "50%",
+
+  width: "60%",
+  height: "60%",
+  margin: "0 auto",
 });

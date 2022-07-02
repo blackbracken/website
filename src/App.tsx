@@ -20,7 +20,7 @@ export const App: Component = () => {
 
   return (
     <div class={onDarkTheme() ? darkTheme : lightTheme}>
-      <Page />
+      <Page onDarkTheme={onDarkTheme()} setOnDarkTheme={setDarkTheme} />
     </div>
   );
 };

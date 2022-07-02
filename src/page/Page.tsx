@@ -1,12 +1,18 @@
 import { Component } from "solid-js";
+import Career from "../molecules/Career";
+import Experiences from "../molecules/Experiences";
+import Interests from "../molecules/Interests";
 import Name from "../molecules/Name";
 import SeeAlso from "../molecules/SeeAlso";
 import Title from "../molecules/Title";
-import Interests from "../molecules/Interests";
-import Career from "../molecules/Career";
-import Experiences from "../molecules/Experiences";
+import ToggleThemeFab from "../molecules/ToggleThemeFab";
 
-export const Page: Component = () => {
+type PageProps = {
+  onDarkTheme: boolean;
+  setOnDarkTheme: (onDarkTheme: boolean) => void;
+};
+
+export const Page: Component<PageProps> = (props: PageProps) => {
   const destinations = [
     { text: "GitHub", url: "https://github.com/blackbracken" },
     { text: "Twitter", url: "https://twitter.com/black_bracken" },
@@ -58,13 +64,21 @@ export const Page: Component = () => {
   ];
 
   return (
-    <div class="page">
-      <Title />
-      <Name realName="Yoshikane Fumitaka" />
-      <SeeAlso dests={destinations} />
-      <Interests interests={interests} />
-      <Experiences experienceList={experienceList} />
-      <Career careerHistory={careerHistory} />
-    </div>
+    <>
+      <div class="page">
+        <Title />
+        <Name realName="Yoshikane Fumitaka" />
+        <SeeAlso dests={destinations} />
+        <Interests interests={interests} />
+        <Experiences experienceList={experienceList} />
+        <Career careerHistory={careerHistory} />
+      </div>
+      <ToggleThemeFab
+        onDarkTheme={props.onDarkTheme}
+        onClick={() => {
+          props.setOnDarkTheme(!props.onDarkTheme);
+        }}
+      />
+    </>
   );
 };
