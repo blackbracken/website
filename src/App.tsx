@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal } from "solid-js";
+import { Component, createEffect, createSignal, onMount } from "solid-js";
 import {
   DarkThemeColor,
   darkTheme,
@@ -6,8 +6,13 @@ import {
   lightTheme,
 } from "./app.css";
 import { Page } from "./page/Page";
+import { DarkModeImgPath, LightModeImgPath } from "./molecules/ToggleThemeFab";
 
 export const App: Component = () => {
+  onMount(() => {
+    [DarkModeImgPath, LightModeImgPath].forEach(path => new Image().src = path);
+  });
+  
   const [onDarkTheme, setDarkTheme] = createSignal(
     shouldUseDarkThemeAsDefault()
   );

@@ -1,6 +1,9 @@
 import { Component } from "solid-js";
 import { themeIconClass, toggleThemeButtonClass } from "../app.css";
 
+export const DarkModeImgPath = "/img/dark_mode.svg";
+export const LightModeImgPath = "/img/light_mode.svg";
+
 type ToggleThemeFabProps = { onDarkTheme: boolean; onClick: () => void };
 
 const ToggleThemeFab: Component<ToggleThemeFabProps> = (
@@ -9,7 +12,7 @@ const ToggleThemeFab: Component<ToggleThemeFabProps> = (
   <div class={toggleThemeButtonClass} onClick={props.onClick}>
     <img
       class={themeIconClass}
-      src={props.onDarkTheme ? "/img/dark_mode.svg" : "/img/light_mode.svg"}
+      src={props.onDarkTheme ? DarkModeImgPath : LightModeImgPath}
       alt=""
     />
   </div>
