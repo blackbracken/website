@@ -1,4 +1,4 @@
-import type { Article } from '@/kernel/article'
+import { PublishedIcon, type Published } from '@/kernel/published'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type ZennResponse = {
@@ -20,12 +20,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     })
 
     const resp = (await response.json()) as ZennResponse
-    const articles = resp.articles.map((raw) => {
+    const articles: Published[] = resp.articles.map((raw) => {
       return {
         published_at: raw.published_at,
         title: raw.title,
         link: `https://zenn.dev/${raw.path}`,
-      } as Article
+        icon: PublishedIcon.Zenn,
+      }
     })
     res.status(response.status).json(articles)
   } catch (_) {

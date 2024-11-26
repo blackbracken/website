@@ -1,8 +1,7 @@
 'use client'
 import useArticles from '@/hooks/useArticles'
-import type { Article } from '@/kernel/article'
-import type { Deck } from '@/kernel/deck'
 import { decks } from '@/kernel/deck'
+import type { Published } from '@/kernel/published'
 import dayjs from 'dayjs'
 import type { ReactNode } from 'react'
 import './global.css'
@@ -84,13 +83,16 @@ const Articles = () => {
   )
 }
 
-const ListItem = (props: { value: Article | Deck }) => {
+const ListItem = (props: { value: Published }) => {
   const article = props.value
 
   return (
     <li className={styles.listItem}>
       <div className={styles.date}>{dayjs(article.published_at).format('YYYY-MM-DD')}</div>{' '}
-      <a className={styles.link} href={article.link}>{article.title}</a>
+      <a className={styles.link} href={article.link}>{article.title}</a>{' '}
+      {
+        article.icon && <img className={styles.providerIcon} src={article.icon.path} alt={article.icon.alt} />
+      }
     </li>
   )
 }

@@ -1,4 +1,4 @@
-import type { Article } from '@/kernel/article'
+import { PublishedIcon, type Published } from '@/kernel/published'
 import { XMLParser } from 'fast-xml-parser'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
@@ -67,7 +67,7 @@ const filterPublishedEntries = (entries: HatenaEntry[]): HatenaEntry[] => {
   )
 }
 
-const mapEntriesToArticles = (entries: HatenaEntry[]): Article[] => {
+const mapEntriesToArticles = (entries: HatenaEntry[]): Published[] => {
   return entries.flatMap((entry) => {
     const published_at = (entry.published || entry.updated) ?? null
     const link = entry.link.find((link) => link.rel === 'alternate')?.href ?? null
@@ -80,6 +80,7 @@ const mapEntriesToArticles = (entries: HatenaEntry[]): Article[] => {
         published_at,
         title: entry.title,
         link,
+        icon: PublishedIcon.HatenaBlog,
       },
     ]
   })
