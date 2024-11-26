@@ -26,25 +26,17 @@
   }
 }
 
-.sectionTitle {
-  font-size: 4vw;
-  font-weight: 600;
-
-  @media screen and (min-width: 800px) {
-    font-size: 2vw;
-  }
-}
-
 .date {
   font-family: 'Roboto Mono', monospace;
   display: inline;
 }
 
 .link {
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 .listItem {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  vertical-align: middle;
 }

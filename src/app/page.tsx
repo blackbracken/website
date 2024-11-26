@@ -34,11 +34,11 @@ const SeeAlso = () => {
     <div>
       <h1>See also</h1>
       <ul>
-        <li>
-          <a href="https://github.com/blackbracken/">GitHub</a>
+        <li className={styles.listItem}>
+          <a className={styles.link} href="https://github.com/blackbracken/">GitHub</a>
         </li>
-        <li>
-          <a href="https://x.com/black_bracken">Twitter (currently X)</a>
+        <li className={styles.listItem}>
+          <a className={styles.link} href="https://x.com/black_bracken">Twitter (currently X)</a>
         </li>
       </ul>
     </div>
@@ -90,7 +90,7 @@ const ListItem = (props: { value: Article | Deck }) => {
   return (
     <li className={styles.listItem}>
       <div className={styles.date}>{dayjs(article.published_at).format('YYYY-MM-DD')}</div>{' '}
-      <a href={article.link}>{article.title}</a>
+      <a className={styles.link} href={article.link}>{article.title}</a>
     </li>
   )
 }
