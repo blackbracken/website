@@ -14,8 +14,8 @@ export default function Home() {
       <div className={styles.title}>bracken.black</div>
       <Name />
       <SeeAlso />
-      <Articles />
       <Decks />
+      <Articles />
     </main>
   )
 }
@@ -45,26 +45,6 @@ const SeeAlso = () => {
   )
 }
 
-const Articles = () => {
-  const articles = useArticles()
-
-  let node: ReactNode | null = null;
-  if (articles === null) {
-    node = <div>Loading...</div>
-  } else if (articles.length === 0) {
-    node = <div>No articles found</div>
-  } else {
-    node = (<ul>{articles.map((article, idx) => (<ListItem value={article} key={idx} />))}</ul>)
-  }
-
-  return (
-    <div>
-      <h1>Articles</h1>
-      {node}
-    </div>
-  )
-}
-
 const Decks = () => {
   return (
     <div>
@@ -74,6 +54,32 @@ const Decks = () => {
           <ListItem value={deck} key={idx} />
         ))}
       </ul>
+    </div>
+  )
+}
+
+const Articles = () => {
+  const articles = useArticles()
+
+  let node: ReactNode | null = null
+  if (articles === null) {
+    node = <div>Loading...</div>
+  } else if (articles.length === 0) {
+    node = <div>No articles found</div>
+  } else {
+    node = (
+      <ul>
+        {articles.map((article, idx) => (
+          <ListItem value={article} key={idx} />
+        ))}
+      </ul>
+    )
+  }
+
+  return (
+    <div>
+      <h1>Articles</h1>
+      {node}
     </div>
   )
 }
