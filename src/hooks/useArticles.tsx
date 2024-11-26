@@ -28,6 +28,7 @@ const useArticles = () => {
       ])
       .catch((error) => {
         console.error(error)
+
         setZennResult(null)
         setHatenaResult(null)
       });

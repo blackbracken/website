@@ -88,7 +88,7 @@ const ListItem = (props: { value: Article | Deck }) => {
   const article = props.value
 
   return (
-    <li>
+    <li className={styles.listItem}>
       <div className={styles.date}>{dayjs(article.published_at).format('YYYY-MM-DD')}</div>{' '}
       <a href={article.link}>{article.title}</a>
     </li>
