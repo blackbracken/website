@@ -15,23 +15,21 @@ const useArticles = () => {
   const [hatenaResult, setHatenaResult] = useState<Article[] | null>(null)
 
   useEffect(() => {
-    Promise
-      .all([
-        fetch('/api/proxy/zenn')
-          .then((res) => res.json())
-          .then((res) => res as Article[])
-          .then((res) => setZennResult(res)),
-        fetch('/api/proxy/hatena')
-          .then((res) => res.json())
-          .then((res) => res as Article[])
-          .then((res) => setHatenaResult(res)),
-      ])
-      .catch((error) => {
-        console.error(error)
+    Promise.all([
+      fetch('/api/proxy/zenn')
+        .then((res) => res.json())
+        .then((res) => res as Article[])
+        .then((res) => setZennResult(res)),
+      fetch('/api/proxy/hatena')
+        .then((res) => res.json())
+        .then((res) => res as Article[])
+        .then((res) => setHatenaResult(res)),
+    ]).catch((error) => {
+      console.error(error)
 
-        setZennResult(null)
-        setHatenaResult(null)
-      });
+      setZennResult(null)
+      setHatenaResult(null)
+    })
   }, [])
 
   return mergeAndSortArticles(zennResult, hatenaResult, localArticles)
