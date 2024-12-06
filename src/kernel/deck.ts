@@ -1,4 +1,5 @@
-import { Published, PublishedIcon } from "@/kernel/published"
+import type { Published } from "@/kernel/published";
+import { PublishedIcon } from "@/kernel/published"
 
 // TODO: move
 export const decks: Published[] = [
